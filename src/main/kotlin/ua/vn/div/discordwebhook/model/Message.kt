@@ -9,5 +9,7 @@ data class Message(
     val avatarUrl: String,
     val username: String,
     val content: String,
-    val embeds: List<Embed>
+    val embeds: List<Embed>,
+    @SerialName("allowed_mentions")
+    val allowedMentions: AllowedMentions
 )
