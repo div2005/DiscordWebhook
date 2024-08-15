@@ -7,12 +7,12 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class Embed(
     val title: String,
-    val color: Int,
-    val description: String,
-    val url: String,
+    val color: Int? = null,
+    val description: String? = null,
+    val url: String? = null,
 
     @Serializable(with = InstantIso8601Serializer::class)
-    val timestamp: Instant,
+    val timestamp: Instant? = null,
 
     val author: Author? = null,
     val image: Image? = null,

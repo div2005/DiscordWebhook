@@ -5,9 +5,9 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class Author(
-    val name: String,
+    val name: String? = null,
     @SerialName("url")
-    val url: String,
+    val url: String? = null,
     @SerialName("icon_url")
-    val icon: String,
+    val icon: String? = null,
 )

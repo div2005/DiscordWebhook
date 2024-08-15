@@ -6,10 +6,10 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class Message(
     @SerialName("avatar_url")
-    val avatarUrl: String,
-    val username: String,
-    val content: String,
-    val embeds: List<Embed>,
+    val avatarUrl: String? = null,
+    val username: String? = null,
+    val content: String? = null,
+    val embeds: List<Embed>? = null,
     @SerialName("allowed_mentions")
-    val allowedMentions: AllowedMentions
+    val allowedMentions: AllowedMentions? = null
 )
