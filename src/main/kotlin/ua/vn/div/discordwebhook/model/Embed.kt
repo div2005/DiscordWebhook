@@ -18,4 +18,5 @@ data class Embed(
     val image: Image? = null,
     val thumbnail: Image? = null,
     val footer: Footer? = null,
+    val fields: List<Field> = emptyList()
 )
