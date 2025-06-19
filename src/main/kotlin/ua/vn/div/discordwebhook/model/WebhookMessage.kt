@@ -4,7 +4,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class Message(
+data class WebhookMessage(
     @SerialName("avatar_url")
     val avatarUrl: String? = null,
     val username: String? = null,

@@ -18,12 +18,11 @@ class DiscordWebhook(
         }
     }
 ) {
-    private val URL_PATTERN = Regex("https?:\\/\\/discord.com\\/api\\/webhooks\\/([^\\/]+)\\/([^\\/]+)")
 
-    suspend fun sendMessage(url: String, message: Message): HttpResponse? {
-        val json = Json.encodeToString(message)
+    suspend fun sendMessage(url: String, webhookMessage: WebhookMessage): HttpResponse? {
+        val json = Json.encodeToString(webhookMessage)
 
-        if (!URL_PATTERN.matches(url)) return null
+        if (url.isEmpty()) return null
 
         try {
             return httpClient.post(url) {
